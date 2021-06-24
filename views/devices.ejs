@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style type="text/css">
+    table th, table td { text-align: left; padding: 5px }
+    table tbody tr td { border: 1px solid #e0e3e6; }
+    table thead tr th { border: 1px solid #98a0a9; }
+  </style>
+</head>
+<body>
+
+<ul>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="5" style="text-align: center; background: #98a0a9;">Devices</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>IMEI Number</th>
+        <th>Serial No</th>
+        <th>Device Model</th>
+        <th>Last Connected At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% devices.forEach(function(record){ %>
+        <tr>
+          <td><%= record.device.name %></td>
+          <td><%= record.device.imei_no %></td>
+          <td><%= record.device.serial_no %></td>
+          <td><%= record.device.make %><%= record.device.model %></td>
+          <td><%= record.device.last_connected_at %></td>
+        </tr>
+      <% }) %>
+</ul>
+</body>
+</html>
